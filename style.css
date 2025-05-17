@@ -1,0 +1,138 @@
+/* Animated Background */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main container */
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Typewriter animation for the question */
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid pink;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .1em;
+  animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+  font-size: 1.8rem;
+  color: #d6336c;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent }
+}
+
+/* Button styles */
+.buttons {
+  margin-top: 30px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 12px 30px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Yes button with heartbeat */
+#yesBtn {
+  background-color: #e84393;
+  color: white;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* No button dodges */
+#noBtn {
+  background-color: #636e72;
+  color: white;
+  position: relative;
+}
+
+#response {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  color: #2d3436;
+}
+
+/* Fade out effect */
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Final love message style */
+.love-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #d6336c;
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Floating hearts animation */
+.heart {
+  position: fixed;
+  top: -30px;
+  font-size: 2rem;
+  animation: floatHeart linear infinite;
+  z-index: 1;
+}
+
+@keyframes floatHeart {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
